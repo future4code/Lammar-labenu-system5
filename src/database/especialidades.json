@@ -1,17 +1,22 @@
 [
     {
+        "id": "01",
         "nome": "JS"
     },
     {
+        "id": "02",
         "nome": "CSS"
     },
     {
+        "id": "03",
         "nome": "React"
     },
     {
+        "id": "04",
         "nome": "Typescript"
     },
     {
+        "id": "05",
         "nome": "POO"
     }
 ]
