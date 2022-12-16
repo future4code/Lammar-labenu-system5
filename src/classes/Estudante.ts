@@ -1,10 +1,20 @@
-export class Estudante {
+import { Usuario } from "./Usuario"
+
+export class Estudante extends Usuario {
     constructor(
-        private id: string,
-        private nome: string,
-        private email: string,
-        private data_nasc: string,
-        private turma_id: string,
-        private hobbies:string[]
-    ) { }
+        id: string,
+        nome: string,
+        email: string,
+        data_nasc: string,
+        turma_id: string,
+        private hobbies: string[]
+    ) {
+        super(
+            id,
+            nome,
+            email,
+            data_nasc,
+            turma_id
+        )
+    }
 }
