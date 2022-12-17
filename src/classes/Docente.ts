@@ -7,7 +7,6 @@ export class Docente extends Usuario {
         email:string,
         data_nasc:string,
         turma_id:string,
-        private especialidades:string[]
     ) {
         super(
             id,

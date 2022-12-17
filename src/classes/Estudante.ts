@@ -6,8 +6,7 @@ export class Estudante extends Usuario {
         nome: string,
         email: string,
         data_nasc: string,
-        turma_id: string,
-        private hobbies: string[]
+        turma_id: string
     ) {
         super(
             id,

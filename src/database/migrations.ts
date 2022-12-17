@@ -24,11 +24,11 @@ const createTables = () =>
         .catch(printError)
 
 
-// Tabela de Relação Estudante-Hobbie
-BaseDB.connection.schema.hasTable(BaseDB.tableEstudanteHobby).then((exists) => {
+// Tabela de Relação Hobby-Estudante
+BaseDB.connection.schema.hasTable(BaseDB.tableHobbyEstudante).then((exists) => {
     if (!exists) {
         return BaseDB.connection.schema
-            .createTable(BaseDB.tableEstudanteHobby, (table) => {
+            .createTable(BaseDB.tableHobbyEstudante, (table) => {
                 table.string('id')
                 table.primary(['id'])
                 table.string('id_hobby')
@@ -39,10 +39,10 @@ BaseDB.connection.schema.hasTable(BaseDB.tableEstudanteHobby).then((exists) => {
                     .onDelete('cascade')
             })
             .then(() => {
-                console.log(`Table ${BaseDB.tableEstudanteHobby} created.`)
+                console.log(`Table ${BaseDB.tableHobbyEstudante} created.`)
             })
     } else {
-        console.log(`Table ${BaseDB.tableEstudanteHobby} already exists.`)
+        console.log(`Table ${BaseDB.tableHobbyEstudante} already exists.`)
     }
 })
     .catch(printError)

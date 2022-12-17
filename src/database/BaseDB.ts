@@ -8,7 +8,7 @@ export abstract class BaseDB {
     public static tableEstudante = "LabSys_estudante"
     public static tableDocente = "LabSys_docente"
     public static tableTurma = "LabSys_turma"
-    public static tableEstudanteHobby = "LabSys_estudanteHobby"
+    public static tableHobbyEstudante = "LabSys_estudanteHobby"
     public static tableHobbies = "LabSys_hobbies"
     public static tableDocenteEspecialidades = "LabSys_docenteEspec"
     public static tableEspecialidades = "LabSys_especialidades"
