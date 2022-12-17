@@ -1,0 +1,12 @@
+### Add turma
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "Turma3",
+    "modulo": "1"
+}
+
+### Get Turmas
+GET http://localhost:3003/turma
+Content-Type: application/json
