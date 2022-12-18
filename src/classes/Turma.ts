@@ -22,5 +22,10 @@ export class Turma extends BaseDB {
         return result
     }
 
-    
+    public static changeModulo = async (id:string, value:string) => {
+        await Turma
+            .connection(Turma.tableTurma)
+            .where('id', '=', id)
+            .update('modulo', value)
+    }
 }

@@ -3,10 +3,19 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma3",
-    "modulo": "1"
+    "nome": "Turma2",
+    "modulo": "2"
 }
 
 ### Get Turmas
 GET http://localhost:3003/turma
 Content-Type: application/json
+
+### Change Modulo de uma Turma
+PUT http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "id":"1671388198312",
+    "modulo":"1"
+}

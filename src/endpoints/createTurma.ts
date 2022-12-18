@@ -9,6 +9,9 @@ export const createTurma = async (req:Request, res:Response) => {
         if (!nome) {
             throw new Error("Informe um nome para a turma.")
         }
+        if (modulo < "0" || modulo > "6") {
+            throw new Error("O módulo da turma deve estar entre 0 e 6.")
+        }
 
         const novaTurma = new Turma(
             Date.now().toString(),
