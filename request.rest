@@ -44,5 +44,17 @@ Content-Type: application/json
 {
     "idEstudante":"1671398022247",
     "idNovaTurma":"1671388208173"
+}
 
+### Create novo docente
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome":"docente2",
+    "email":"docente2@email.com",
+    "day":"01",
+    "month":"01",
+    "year":"2001",
+    "turma_id":"1671388198312"
 }

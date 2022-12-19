@@ -16,4 +16,10 @@ export class Docente extends Usuario {
             turma_id
         )
     }
+
+    public static createDocente = async(novoDocente: Docente) => {
+        await Docente
+            .connection(Docente.tableDocente)
+            .insert(novoDocente)
+    }
 }
