@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { Turma } from "../classes/Turma";
+import { Turma } from "../../classes/Turma";
 
 export const getTurmas = async (req:Request, res:Response) => {
     let errorCode = 400

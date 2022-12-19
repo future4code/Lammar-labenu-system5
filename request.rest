@@ -1,21 +1,48 @@
-### Add turma
+### Adicionar turma
 POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma2",
-    "modulo": "2"
+    "nome": "Turma3",
+    "modulo": "3"
 }
 
-### Get Turmas
+### Obter todas as turmas
 GET http://localhost:3003/turma
 Content-Type: application/json
 
-### Change Modulo de uma Turma
+### Alterar o modulo de uma turma
 PUT http://localhost:3003/turma
 Content-Type: application/json
 
 {
     "id":"1671388198312",
-    "modulo":"1"
+    "modulo":"4"
+}
+
+### Adicionar estudante
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+    "nome":"aluno3",
+    "email":"aluno3@email.com",
+    "day":"01",
+    "month":"01",
+    "year":"2000",
+    "turma_id":"1671388198312"
+}
+
+### Buscar aluno pelo nome
+GET http://localhost:3003/estudante?nome=al
+Content-Type: application/json
+
+### Alterar turma em que o aluno está
+PUT http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+    "idEstudante":"1671398022247",
+    "idNovaTurma":"1671388208173"
+
 }

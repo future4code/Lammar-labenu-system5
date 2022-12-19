@@ -16,4 +16,25 @@ export class Estudante extends Usuario {
             turma_id
         )
     }
+
+    public static createEstudante = async(novoEstudante: Estudante) => {
+        await Estudante
+            .connection(Estudante.tableEstudante)
+            .insert(novoEstudante)
+    }
+
+    public static getEstudanteByName = async (nome:string) => {
+        const result = await Estudante
+            .connection(Estudante.tableEstudante)
+            .select()
+            .where("nome","like",`%${nome}%`)
+        return result
+    }
+
+    public static changeTurma = async (idEstudante:string, idNovaTurma:string) => {
+        await Estudante
+            .connection(Estudante.tableEstudante)
+            .where("id","=",idEstudante)
+            .update("turma_id",idNovaTurma)
+    }
 }

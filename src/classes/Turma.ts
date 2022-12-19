@@ -1,4 +1,4 @@
-import { BaseDB } from "../database/BaseDB"
+import { BaseDB } from "./BaseDB"
 
 export class Turma extends BaseDB {
     constructor(

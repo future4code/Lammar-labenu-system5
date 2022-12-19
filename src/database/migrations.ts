@@ -1,4 +1,4 @@
-import { BaseDB } from "./BaseDB"
+import { BaseDB } from "../classes/BaseDB"
 import especialidades from "./especialidades.json"
 
 const printError = (error: any) => { console.log(error.sqlMessage || error.message) }
@@ -82,7 +82,7 @@ BaseDB.connection.schema.hasTable(BaseDB.tableTurma).then((exists) => {
             .createTable(BaseDB.tableTurma, (table) => {
                 table.string('id')
                 table.primary(['id'])
-                table.string('nome').notNullable()
+                table.string('nome').notNullable().unique()
                 table.string('modulo').notNullable().defaultTo(0)
             })
             .then(() => {
