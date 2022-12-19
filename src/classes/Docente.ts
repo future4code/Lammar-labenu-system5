@@ -16,17 +16,4 @@ export class Docente extends Usuario {
             turma_id
         )
     }
-
-    public static createDocente = async(novoDocente: Docente) => {
-        await Docente
-            .connection(Docente.tableDocente)
-            .insert(novoDocente)
-    }
-
-    public static getDocentes = async () => {
-        const result = await Docente
-            .connection(Docente.tableDocente)
-            .select()
-        return result
-    }
 }

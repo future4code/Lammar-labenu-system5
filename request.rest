@@ -1,9 +1,45 @@
+### Buscar estudante ou docente
+GET http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"estudante",
+    "nome":"ALU"
+}
+
+### Alterar turma do docente ou estudante
+PUT http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"DoCeNte",
+    "idUsuario":"1671483794765",
+    "idNovaTurma":"1671388198312"
+}
+
+### Adicionar novo estudante ou docente
+POST http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"Docente",
+    "nome":"docente3",
+    "email":"docente3@email.com",
+    "day":"01",
+    "month":"01",
+    "year":"2000",
+    "turma_id":"1671388198312"
+}
+
+
+
+
 ### Adicionar turma
 POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma3",
+    "nome": "Turma4",
     "modulo": "3"
 }
 
@@ -20,31 +56,11 @@ Content-Type: application/json
     "modulo":"4"
 }
 
-### Adicionar estudante
-POST http://localhost:3003/estudante
-Content-Type: application/json
 
-{
-    "nome":"aluno3",
-    "email":"aluno3@email.com",
-    "day":"01",
-    "month":"01",
-    "year":"2000",
-    "turma_id":"1671388198312"
-}
 
-### Buscar aluno pelo nome
-GET http://localhost:3003/estudante?nome=al
-Content-Type: application/json
 
-### Alterar turma em que o aluno está
-PUT http://localhost:3003/estudante
-Content-Type: application/json
 
-{
-    "idEstudante":"1671398022247",
-    "idNovaTurma":"1671388208173"
-}
+
 
 ### Adicionar novo docente
 POST http://localhost:3003/docente
