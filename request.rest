@@ -36,8 +36,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma6",
-    "modulo": "6"
+    "nome": "Turma",
+    "modulo": "0"
 }
 
 ### Alterar o modulo de uma turma
@@ -48,3 +48,7 @@ Content-Type: application/json
     "id":"1671388198312",
     "modulo":"1"
 }
+
+### Obter estudantes e docentes de uma turma
+GET http://localhost:3003/members?turma=1671388198312
+Content-Type: application/json
