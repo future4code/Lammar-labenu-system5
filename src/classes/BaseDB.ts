@@ -1,5 +1,8 @@
 import knex from "knex"
 import dotenv from "dotenv"
+import { Docente } from "./Docente"
+import { Estudante } from "./Estudante"
+import { Turma } from "./Turma"
 
 dotenv.config()
 
@@ -24,4 +27,20 @@ export abstract class BaseDB {
             multipleStatements: true
         },
     })
+
+    public static addEntity =
+        async (tableName: string, newEntity: Docente | Estudante | Turma) => {
+            await BaseDB
+                .connection(tableName)
+                .insert(newEntity)
+        }
+
+    public static getEntity = async (tableName: string, nomeUsuario: string) => {
+        const result = await BaseDB
+            .connection(tableName)
+            .select()
+            .where("nome", "like", `%${nomeUsuario}%`)
+        return result
+    }
+
 }

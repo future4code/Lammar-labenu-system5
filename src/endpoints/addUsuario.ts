@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
-import { Docente } from "../../classes/Docente"
-import { Estudante } from "../../classes/Estudante"
-import { Usuario } from "../../classes/Usuario"
+import { Docente } from "../classes/Docente"
+import { Estudante } from "../classes/Estudante"
+import { BaseDB } from "../classes/BaseDB";
 
 export const addUsuario = async (req:Request, res:Response) => {
     let errorCode = 400
@@ -14,7 +14,7 @@ export const addUsuario = async (req:Request, res:Response) => {
             throw new Error("Body incompleto.")
         }
         if (table.toLowerCase() === 'estudante') {
-            tableName = Usuario.tableEstudante
+            tableName = BaseDB.tableEstudante
             novoUsuario = new Estudante(
                 Date.now().toString(),
                 nome,
@@ -23,7 +23,7 @@ export const addUsuario = async (req:Request, res:Response) => {
                 turma_id
             )
         } else if (table.toLowerCase() === 'docente') {
-            tableName = Usuario.tableDocente
+            tableName = BaseDB.tableDocente
             novoUsuario = new Docente(
                 Date.now().toString(),
                 nome,
@@ -35,7 +35,7 @@ export const addUsuario = async (req:Request, res:Response) => {
             throw new Error("Escolha tabela estudante ou docente.")
         }
 
-        await Usuario.addUsuario(tableName, novoUsuario)
+        await BaseDB.addEntity(tableName, novoUsuario)
         
         res.status(201).send(
             {message: `Novo ${table.toLowerCase()} adicionado.`, novoUsuario})

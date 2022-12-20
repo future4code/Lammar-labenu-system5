@@ -1,10 +1,10 @@
-### Buscar estudante ou docente
-GET http://localhost:3003/usuario
+### Buscar estudante, docente ou turma
+GET http://localhost:3003/entity
 Content-Type: application/json
 
 {
-    "table":"estudante",
-    "nome":"ALU"
+    "table":"turma",
+    "nome":""
 }
 
 ### Alterar turma do docente ou estudante
@@ -22,30 +22,23 @@ POST http://localhost:3003/usuario
 Content-Type: application/json
 
 {
-    "table":"Docente",
-    "nome":"docente3",
-    "email":"docente3@email.com",
+    "table":"docente",
+    "nome":"docente5",
+    "email":"docente5@email.com",
     "day":"01",
     "month":"01",
     "year":"2000",
     "turma_id":"1671388198312"
 }
 
-
-
-
 ### Adicionar turma
 POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma4",
-    "modulo": "3"
+    "nome": "Turma6",
+    "modulo": "6"
 }
-
-### Obter todas as turmas
-GET http://localhost:3003/turma
-Content-Type: application/json
 
 ### Alterar o modulo de uma turma
 PUT http://localhost:3003/turma
@@ -53,28 +46,5 @@ Content-Type: application/json
 
 {
     "id":"1671388198312",
-    "modulo":"4"
+    "modulo":"1"
 }
-
-
-
-
-
-
-
-### Adicionar novo docente
-POST http://localhost:3003/docente
-Content-Type: application/json
-
-{
-    "nome":"docente2",
-    "email":"docente2@email.com",
-    "day":"01",
-    "month":"01",
-    "year":"2001",
-    "turma_id":"1671388198312"
-}
-
-### Obter todas as pessoas docentes
-GET http://localhost:3003/docente
-Content-Type: application/json
