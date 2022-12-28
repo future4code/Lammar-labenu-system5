@@ -26,7 +26,7 @@ export const changeTurma = async (req:Request, res:Response) => {
 
         await Usuario.changeTurma(tableName, idUsuario, idNovaTurma)
 
-        res.status(201).send(`A turma do ${table.toLowerCase()} foi alterada.`)
+        res.status(200).send(`A turma do ${table.toLowerCase()} foi alterada.`)
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

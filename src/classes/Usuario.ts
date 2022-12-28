@@ -11,10 +11,18 @@ export abstract class Usuario extends BaseDB {
         super()
     }
 
-    public static changeTurma = async (tableName:string, idUsuario:string, idNovaTurma:string) => {
-        await Usuario
-            .connection(tableName)
-            .where("id","=",idUsuario)
-            .update("turma_id",idNovaTurma)
+    public static changeTurma = async (tableName: string, idUsuario: string, idNovaTurma: string) => {
+        try {
+            const result = await Usuario
+                .connection.raw(`
+                    UPDATE ${tableName} SET turma_id = ${idNovaTurma} WHERE id = ${idUsuario}
+                `)
+            if (result[0].changedRows === 0) {
+                throw new Error("Erro. Nenhum dado atualizado.")
+            }
+
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
     }
 }

@@ -13,9 +13,9 @@ PUT http://localhost:3003/usuario
 Content-Type: application/json
 
 {
-    "table":"DoCeNte",
-    "idUsuario":"1671483794765",
-    "idNovaTurma":"1671388198312"
+    "table":"estudante",
+    "idUsuario":"1671398022247",
+    "idNovaTurma":"1671388784337"
 }
 
 
