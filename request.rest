@@ -14,8 +14,8 @@ Content-Type: application/json
 
 {
     "table":"docente",
-    "nome":"docente2",
-    "email":"docente2@email.com",
+    "nome":"docente4",
+    "email":"docente4@email.com",
     "day":"01",
     "month":"01",
     "year":"2000",
@@ -55,10 +55,10 @@ Content-Type: application/json
 
 
 ### Obter todos os estudantes e docentes de uma turma
-GET http://localhost:3003/members?turma=1671388198312
+GET http://localhost:3003/members?turma=1672255543718
 Content-Type: application/json
 
 
 ### Obter estudantes com um determinado hobby
-GET http://localhost:3003/estudante?idHobby=01
+GET http://localhost:3003/estudante?idHobby=02
 Content-Type: application/json
