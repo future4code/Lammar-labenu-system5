@@ -83,6 +83,8 @@ BaseDB.connection.schema.hasTable(BaseDB.tableTurma).then((exists) => {
                 table.string('id')
                 table.primary(['id'])
                 table.string('nome').notNullable().unique()
+                table.date('data_inicio').notNullable()
+                table.date('data_termino').notNullable()
                 table.string('modulo').notNullable().defaultTo(0)
             })
             .then(() => {
