@@ -38,7 +38,7 @@ export const addUsuario = async (req:Request, res:Response) => {
         await BaseDB.addEntity(tableName, novoUsuario)
         
         res.status(201).send(
-            {message: `Novo ${table.toLowerCase()} adicionado.`, novoUsuario})
+            {message: `Novo ${table.toLowerCase()} adicionado à turma.`, novoUsuario})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

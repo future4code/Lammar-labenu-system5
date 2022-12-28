@@ -1,3 +1,28 @@
+### Adicionar turma
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "Turma3",
+    "modulo": "3"
+}
+
+
+### Adicionar novo estudante ou docente
+POST http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"docente",
+    "nome":"docente2",
+    "email":"docente2@email.com",
+    "day":"01",
+    "month":"01",
+    "year":"2000",
+    "turma_id":"1672255562647"
+}
+
+
 ### Buscar estudante, docente ou turma
 GET http://localhost:3003/entity
 Content-Type: application/json
@@ -14,33 +39,8 @@ Content-Type: application/json
 
 {
     "table":"estudante",
-    "idUsuario":"1671398022247",
-    "idNovaTurma":"1671388784337"
-}
-
-
-### Adicionar novo estudante ou docente
-POST http://localhost:3003/usuario
-Content-Type: application/json
-
-{
-    "table":"docente",
-    "nome":"docente5",
-    "email":"docente5@email.com",
-    "day":"01",
-    "month":"01",
-    "year":"2000",
-    "turma_id":"1671388198312"
-}
-
-
-### Adicionar turma
-POST http://localhost:3003/turma
-Content-Type: application/json
-
-{
-    "nome": "Turma",
-    "modulo": "0"
+    "idUsuario":"1672255776712",
+    "idNovaTurma":"1672255543718"
 }
 
 
@@ -49,7 +49,7 @@ PUT http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "id":"1671388198312",
+    "id":"1672255543718",
     "modulo":"1"
 }
 

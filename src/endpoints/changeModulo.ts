@@ -18,7 +18,7 @@ export const changeModulo = async (req:Request, res:Response) => {
 
         await Turma.changeModulo(id,modulo)
 
-        res.status(201).send("Módulo atualizado.")
+        res.status(200).send("O módulo da turma foi alterado.")
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }
