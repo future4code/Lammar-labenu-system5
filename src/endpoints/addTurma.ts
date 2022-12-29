@@ -4,7 +4,8 @@ import { Turma } from "../classes/Turma";
 export const addTurma = async (req:Request, res:Response) => {
     let errorCode = 400
     try {
-        let {nome, periodo, modulo} = req.body
+        let {nome, periodo, dataInicio,
+            dataTermino, modulo} = req.body
 
         if (!nome) {
             throw new Error("Informe um nome para a turma.")
@@ -27,6 +28,8 @@ export const addTurma = async (req:Request, res:Response) => {
         const novaTurma = new Turma(
             Date.now().toString(),
             nome,
+            dataInicio,
+            dataTermino,
             modulo
         )
 

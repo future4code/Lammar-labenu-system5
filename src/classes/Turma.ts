@@ -4,6 +4,8 @@ export class Turma extends BaseDB {
     constructor(
         private id: string,
         private nome: string,
+        private data_inicio: string,
+        private data_termino: string,
         private modulo: string = '0'
     ) {
         super()
