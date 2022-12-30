@@ -6,11 +6,11 @@ import { BaseDB } from "../classes/BaseDB";
 export const addUsuario = async (req:Request, res:Response) => {
     let errorCode = 400
     try {
-        const {table, nome, email, day, month, year, turma_id } = req.body
+        const {table, nome, email, data_nasc, turma_id } = req.body
         let tableName:string
         let novoUsuario: Docente | Estudante
 
-        if (!table || !nome || !email || !day || !month || !year || !turma_id) {
+        if (!table || !nome || !email || !data_nasc || !turma_id) {
             throw new Error("Body incompleto.")
         }
         if (table.toLowerCase() === 'estudante') {
@@ -19,7 +19,7 @@ export const addUsuario = async (req:Request, res:Response) => {
                 Date.now().toString(),
                 nome,
                 email,
-                `${year}/${month}/${day}`,
+                data_nasc,
                 turma_id
             )
         } else if (table.toLowerCase() === 'docente') {
@@ -28,7 +28,7 @@ export const addUsuario = async (req:Request, res:Response) => {
                 Date.now().toString(),
                 nome,
                 email,
-                `${year}/${month}/${day}`,
+                data_nasc,
                 turma_id
             )
         } else {

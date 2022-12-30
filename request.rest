@@ -3,8 +3,10 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "Turma7",
+    "nome": "Turma1",
     "periodo": "NOTURNO",
+    "dataInicio": "2022/01/01",
+    "dataTermino": "2023/01/01",
     "modulo": "7"
 }
 
@@ -14,13 +16,11 @@ POST http://localhost:3003/usuario
 Content-Type: application/json
 
 {
-    "table":"docente",
-    "nome":"docente4",
-    "email":"docente4@email.com",
-    "day":"01",
-    "month":"01",
-    "year":"2000",
-    "turma_id":"1672255562647"
+    "table":"estudante",
+    "nome":"estudante2",
+    "email":"estudante2@email.com",
+    "data_nasc": "1957/04/13",
+    "turma_id":"1672271644553"
 }
 
 
@@ -62,4 +62,9 @@ Content-Type: application/json
 
 ### Obter estudantes com um determinado hobby
 GET http://localhost:3003/estudante?idHobby=02
+Content-Type: application/json
+
+
+### Obter idade do estudante a partir do ID
+GET http://localhost:3003/estudante/idade?userId=1672272294248
 Content-Type: application/json

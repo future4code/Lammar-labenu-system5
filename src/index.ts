@@ -6,6 +6,7 @@ import { changeModulo } from "./endpoints/changeModulo"
 import { addTurma } from "./endpoints/addTurma"
 import { getMembers } from "./endpoints/getMembers"
 import { getEstudanteByHobby } from "./endpoints/getEstudanteByHobby"
+import { getUserAge } from "./endpoints/getUserAge"
 
 app.get("/entity", getEntity)
 
@@ -18,3 +19,4 @@ app.put("/turma", changeModulo)
 app.get("/members", getMembers)
 
 app.get("/estudante", getEstudanteByHobby)
+app.get("/estudante/idade", getUserAge)
