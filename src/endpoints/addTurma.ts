@@ -19,10 +19,10 @@ export const addTurma = async (req:Request, res:Response) => {
             nome = nome + '-na-night'
         }
 
-        if (modulo < "0" || modulo > "7") {
-            throw new Error("O módulo da turma deve estar entre 0 e 7.")
-        } else if (modulo === "0"){
-            modulo = 'undefined'
+        if (modulo != "undefined") {
+            if (modulo < "1" || modulo > "7") {
+                throw new Error("O módulo da turma deve estar entre 1 e 7 ou undefined.")
+            }
         }
 
         const novaTurma = new Turma(

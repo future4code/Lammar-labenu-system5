@@ -12,8 +12,10 @@ export const changeModulo = async (req:Request, res:Response) => {
         if (!modulo) {
             throw new Error("Informe o módulo da turma.")
         }
-        if (modulo != "undefined" && modulo < "1" || modulo > "7") {
-            throw new Error("O módulo da turma deve estar entre 1 e 7 ou undefined.")
+        if (modulo != "undefined") {
+            if (modulo < "1" || modulo > "7") {
+                throw new Error("O módulo da turma deve estar entre 1 e 7 ou undefined.")
+            }
         }
 
         await Turma.changeModulo(id,modulo)

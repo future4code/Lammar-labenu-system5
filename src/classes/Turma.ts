@@ -15,7 +15,7 @@ export class Turma extends BaseDB {
         try {
             const result = await Turma
                 .connection.raw(`
-                    UPDATE ${this.tableTurma} SET modulo = ${value} WHERE id = ${id}
+                    UPDATE ${this.tableTurma} SET modulo = "${value}" WHERE id = ${id}
                 `)
             if (result[0].changedRows === 0) {
                 throw new Error("Erro. Nenhum dado atualizado.")
