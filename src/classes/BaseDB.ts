@@ -35,11 +35,11 @@ export abstract class BaseDB {
                 .insert(newEntity)
         }
 
-    public static getEntity = async (tableName: string, nomeUsuario: string) => {
+    public static getEntity = async (tableName: string, name: string) => {
         const result = await BaseDB
             .connection(tableName)
             .select()
-            .where("nome", "like", `%${nomeUsuario}%`)
+            .where("nome", "like", `%${name}%`)
         return result
     }
 
