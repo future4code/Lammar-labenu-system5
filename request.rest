@@ -1,0 +1,70 @@
+### Adicionar turma
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "Turma1",
+    "periodo": "NOTURNO",
+    "dataInicio": "2022/01/01",
+    "dataTermino": "2023/01/01",
+    "modulo": "7"
+}
+
+
+### Adicionar novo estudante ou docente
+POST http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"estudante",
+    "nome":"estudante2",
+    "email":"estudante2@email.com",
+    "data_nasc": "1957/04/13",
+    "turma_id":"1672271644553"
+}
+
+
+### Buscar estudante, docente ou turma
+GET http://localhost:3003/entity
+Content-Type: application/json
+
+{
+    "table":"turma",
+    "nome":""
+}
+
+
+### Alterar turma do docente ou estudante
+PUT http://localhost:3003/usuario
+Content-Type: application/json
+
+{
+    "table":"estudante",
+    "idUsuario":"1672255776712",
+    "idNovaTurma":"1672255543718"
+}
+
+
+### Alterar o modulo de uma turma
+PUT http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "id":"1672255543718",
+    "modulo":"1"
+}
+
+
+### Obter todos os estudantes e docentes de uma turma
+GET http://localhost:3003/members?turma=1672255543718
+Content-Type: application/json
+
+
+### Obter estudantes com um determinado hobby
+GET http://localhost:3003/estudante?idHobby=02
+Content-Type: application/json
+
+
+### Obter idade do estudante a partir do ID
+GET http://localhost:3003/estudante/idade?userId=1672272294248
+Content-Type: application/json
